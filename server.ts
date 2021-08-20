@@ -22,8 +22,7 @@ res.send('hola')
 
 // ROUTES
 
-
-
-app.listen(app.get("port"), () => {
-    console.log(`app listening at http://localhost:3000`);
+app.listen(port, () => {
+    console.log(`Listening on port: ${port}`);
   });
+  

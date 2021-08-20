@@ -19,6 +19,6 @@ app.get('/', function (req, res) {
 });
 // ROUTES FILES IMPORTS
 // ROUTES
-app.listen(app.get("port"), function () {
-    console.log("app listening at http://localhost:3000");
+app.listen(port, function () {
+    console.log("Listening on port: " + port);
 });
