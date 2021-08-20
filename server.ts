@@ -11,7 +11,10 @@ export const localJson = () => {
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(express.static("public"));
+// app.use(express.static("public"));
+app.get('/', (req, res)=>{
+res.send('hola')
+})
 app.set("port", 8800 || process.env.PORT);
 
 // ROUTES FILES IMPORTS
