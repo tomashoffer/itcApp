@@ -13,10 +13,10 @@ var localJson = function () {
 exports.localJson = localJson;
 app.use(cookieParser());
 app.use(express.json());
-// app.use(express.static("public"));
-app.get('/', function (req, res) {
-    res.send('hola');
-});
+app.use(express.static("public"));
+// app.get('/', (req, res)=>{
+// res.send('hola')
+// })
 // ROUTES FILES IMPORTS
 // ROUTES
 app.listen(port, function () {
