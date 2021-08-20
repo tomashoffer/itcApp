@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 const cookieParser = require("cookie-parser");
-
+const port = process.env.PORT || 3000;
 
 export const localJson = () => {
     const fileJson = fs.readFileSync("./db/users.json");
@@ -15,7 +15,6 @@ app.use(express.json());
 app.get('/', (req, res)=>{
 res.send('hola')
 })
-app.set("port", 8800 || process.env.PORT);
 
 // ROUTES FILES IMPORTS
 
@@ -26,5 +25,5 @@ app.set("port", 8800 || process.env.PORT);
 
 
 app.listen(app.get("port"), () => {
-    console.log(`app listening at http://localhost:${app.get("port")}`);
+    console.log(`app listening at http://localhost:3000`);
   });
