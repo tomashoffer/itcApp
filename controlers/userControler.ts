@@ -4,5 +4,5 @@ const app = express();
 
 
 export function logIn(req: any, res: any) {
-    
+    res.send({logIn:true})
 }
