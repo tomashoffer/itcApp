@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 const cookieParser = require("cookie-parser");
+const path = require("path");
 const port = process.env.PORT || 3000;
 
 export const localJson = () => {
@@ -11,7 +12,8 @@ export const localJson = () => {
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
+
 // app.get('/', (req, res)=>{
 // res.send('hola')
 // })

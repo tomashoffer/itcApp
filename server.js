@@ -5,6 +5,7 @@ var express = require("express");
 var app = express();
 var fs = require("fs");
 var cookieParser = require("cookie-parser");
+var path = require("path");
 var port = process.env.PORT || 3000;
 var localJson = function () {
     var fileJson = fs.readFileSync("./db/users.json");
@@ -13,7 +14,7 @@ var localJson = function () {
 exports.localJson = localJson;
 app.use(cookieParser());
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 // app.get('/', (req, res)=>{
 // res.send('hola')
 // })
