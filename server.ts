@@ -14,9 +14,6 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.static("public"));
 app.use(express.static("public/dist"));
-// app.get('/', (req, res)=>{
-// res.send('hola')
-// })
 
 // ROUTES FILES IMPORTS
 
