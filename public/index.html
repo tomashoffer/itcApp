@@ -8,6 +8,46 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>DEPLOY THIS APP</h1>
+    <h1>Woow!</h1>
+    <a href="adminPage.html">admin</a>
+    <form onsubmit="register(event)">
+        <input type="text" name="username" placeholder="username">
+        <input type="text" name="password" placeholder="password">
+        <button type="submit">Register</button>
+    </form>
+    <form onsubmit="login(event)">
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <button onclick="getCookie(event)" type="submit">Login</button>
+    </form>
+ 
+    <script>
+        async function login(ev) {
+            ev.preventDefault();
+            let {username, password} = ev.target.elements;
+            username = username.value;
+            password = password.value;
+            
+            const data = await axios.post('/user/login', {username, password});
+            console.log(data)
+        }
+
+        async function register(ev) {
+            ev.preventDefault();
+            let {username, password} = ev.target.elements;
+            username = username.value;
+            password = password.value;
+            const data = await axios.post('/user/register', {username, password});
+            console.log(data)
+        }
+
+        async function getCookie(ev){
+            const getCookie = await axios('/user/adminPanel');
+            console.log(getCookie)
+            window.location.href = 'http://localhost:3000/adminPage.html'
+        }
+
+        </script>
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </html>

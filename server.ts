@@ -1,8 +1,6 @@
 const express = require("express");
 const app = express();
-const fs = require("fs");
 const cookieParser = require("cookie-parser");
-const path = require("path");
 const port = process.env.PORT || 3000;
 
 
@@ -12,10 +10,10 @@ app.use(express.static("public"));
 app.use(express.static("public/dist"));
 
 // ROUTES FILES IMPORTS
-
-
+const userRoute = require('./routes/userRoutes');
 
 // ROUTES
+app.use('/user', userRoute);
 
 app.listen(port, () => {
     console.log(`Listening on port: ${port}`);
